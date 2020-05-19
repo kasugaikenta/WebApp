@@ -10,7 +10,6 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
 //質問表示画面（1つの質問の詳細画面）へ
 Route::get('/detail/{question_id}', 'QuestionsController@detail');
 
@@ -23,3 +22,9 @@ Route::get('/answer/{question_id}', 'QuestionsController@answer');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+//質問記録
+Route::post('/question_save', 'QuestionsController@sendQuestion');
+
+//回答記録
+Route::post('/question/{question_id}/answer', 'QuestionsController@sendAnswer');

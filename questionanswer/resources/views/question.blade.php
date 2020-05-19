@@ -22,7 +22,7 @@
         ?>
         <label for="listing" class="col-sm-3 control-label">質問日時</label> 
         <div class="col-sm-6"> 
-          <input type="text" name="time" class="form-control" value="{{ old('time', $time) }}" readonly>
+          <input type="text" name="time" class="form-control" value="{{ old('time', $time) }}"  style="background-color : white" readonly>
           <div>
             <button type="submit" class="btn btn-default">質問する</button>
           </div>

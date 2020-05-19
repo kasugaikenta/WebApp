@@ -18,8 +18,17 @@ class AnswersController extends Controller
         header("Location:answer.blade.php");
     }
     
-    public function sendAnswer(Request $request){
-        
+    public function sendAnswer(Request $request)
+    {
+        //Validatorを使って入力された値のチェック(バリデーション)処理　（今回は255以上と空欄の場合エラーになります）
+        $validator = Validator::make($request->all() , ['answer_content' => 'required|max:1000', ]);
+
+        //バリデーションの結果がエラーの場合
+        if ($validator->fails())
+        {
+            return redirect()->back()->withErrors($validator->errors())->withInput();
+            // 上記では、入力画面に戻りエラーメッセージと、入力し���内容をフォーム表示させる処理を記述しています
+        }
         $answers = new Answer;
         $answers->content = $request->answer_content;
         $answers->question_id = $request->question_id;

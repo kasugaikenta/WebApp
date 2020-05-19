@@ -4,7 +4,7 @@
 <!-- バリデーションエラーの場合に表示 --> 
 @include('common.errors')
   <!-- 質問作成フォーム -->
-  <form action="{{ url('question_save')}}" method="POST" class="form-horizontal">
+  <form action="{{ url('questionsave')}}" method="POST" class="form-horizontal">
   {{csrf_field()}} 
     <div class="form-group"> 
       <div　class="col-sm-6">
@@ -23,15 +23,11 @@
         <label for="listing" class="col-sm-3 control-label">質問日時</label> 
         <div class="col-sm-6"> 
           <input type="text" name="time" class="form-control" value="{{ old('time', $time) }}" readonly>
+          <div>
+          <button type="submit" class="btn btn-default">質問する</button>
         </div>
-        <div class="col-sm-6"> 
-          <input type= name="question" class="form-control">
         </div>
       </div>
-    </div>
-    <div> 
-      <button type="submit" class="btn btn-default">
-      質問する </button> 
     </div>
   </form>
 </div> 

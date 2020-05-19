@@ -23,9 +23,12 @@
         <label for="listing" class="col-sm-3 control-label">質問日時</label> 
         <div class="col-sm-6"> 
           <input type="text" name="time" class="form-control" value="{{ old('time', $time) }}"  style="background-color : white" readonly>
-          <div>
-            <button type="submit" class="btn btn-default">質問する</button>
-          </div>
+        </div>
+        <label for="listing" class="col-sm-3 control-label">カテゴリ</label>
+        <div class="col-sm-6">
+        </div>
+        <div class="form_group col-sm-3">
+          <button type="submit" class="btn btn-default">質問する</button>
         </div>
       </div>
     </div>

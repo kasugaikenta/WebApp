@@ -19,7 +19,6 @@ class QuestionsController extends Controller
     public function sendQuestion(Request $request){
         //Validatorを使って入力された値のチェック(バリデーション)処理
         $validator = Validator::make($request->all() , ['question_content' => 'required|max:1000', ]);
-        $validator = Validator::make($request->all() , ['question' => 'required|max:1000', ]);
 
         //バリデーションの結果がエラーの場合
         if ($validator->fails())
@@ -57,6 +56,7 @@ class QuestionsController extends Controller
         return view('question_detail', ['question' => $question]);
     }
     
+
     //マイページ表示処理
     public function my_questions(){
         $questions = Question::where('user_id',Auth::user()->id)->get();

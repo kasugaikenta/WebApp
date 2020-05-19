@@ -8,7 +8,7 @@ use App\Answer;
 use Validator;
 use Auth;
 
-class QuestionController extends Controller
+class QuestionsController extends Controller
 {
     public function question(){
         return view('question');
@@ -38,5 +38,11 @@ class QuestionController extends Controller
         $questions->content = $request->question_content;
         $questions->user_id = Auth::user()->id;
         $question->save();
+    }
+    
+    public function my_questions(){
+        $questions = Question::where('user_id',Auth::user()->id)->get();
+        return view('mypage', ['questions' => $questions]);
+        
     }
 }

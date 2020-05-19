@@ -28,3 +28,5 @@ Route::post('/question_save', 'QuestionsController@sendQuestion');
 
 //回答記録
 Route::post('/question/{question_id}/answer', 'QuestionsController@sendAnswer');
+
+Route::get('/question/myquestions/', 'QuestionsController@my_questions');

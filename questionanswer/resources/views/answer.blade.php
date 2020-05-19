@@ -5,7 +5,7 @@
 <div class="panel-body">
   <!-- バリデーションエラーの場合に表示 --> 
   @include('common.errors')
-  <form action="{{ url('/question/{{$question_id}}/answer')}}" method="POST" class="form-horizontal">
+  <form action="{{ url('/answer/question',$question_id)}}" method="POST" class="form-horizontal">
     {{csrf_field()}} 
     <div class="form-group">
       <label for="listing" class="col-sm-3 control-label">質問者名</label>
@@ -13,16 +13,16 @@
       <div class="col-sm-6"> 
         <input type="text" name="questioner" class="form-control" value="{{ old('questioner', Auth::user()->name) }}" style="background-color : white" readonly>
       </div>
-      <div id="question">
+      <div>
         <label for="listing" class="col-sm-3 control-label">質問内容</label>
         <div class="col-sm-6"> 
-          <textarea name="question_content" class="form-control" value="{{ old('$question->content') }}" style="resize : none; background-color : white" readonly>{{$question->content}}</textarea> 
+          <textarea name="question_content" class="form-control" value="{{ old('question_content',$question->content) }}" style="resize : none; background-color : white" readonly>{{$question->content}}</textarea> 
         </div>
       </div>
       <div id="answer">
         <label for="listing" class="col-sm-3 control-label">回答</label>
         <div class="col-sm-6"> 
-          <textarea name="answer_content" class="form-control" value="{{ old('$question->content') }}"></textarea> 
+          <textarea name="answer_content" class="form-control"></textarea> 
         </div>
       </div>
       <?php
@@ -51,7 +51,7 @@
     <div class="form-group"> 
       <div id="update"> 
         <button type="submit" class="btn btn-default">
-          回答する</i> 
+          回答する
         </button> 
       </div>
     </div>

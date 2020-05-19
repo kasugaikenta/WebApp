@@ -50,4 +50,9 @@ class QuestionsController extends Controller
         $question = Question::find($question_id);
         return view('question_detail', ['question' => $question]);
     }
+    
+    public function my_questions(){
+        $questions = Question::where('user_id',Auth::user()->id)->get();
+        return view('mypage', ['questions' => $questions]);
+    }
 }

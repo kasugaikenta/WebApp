@@ -8,7 +8,7 @@ use App\Answer;
 use Validator;
 use Auth;
 
-class AnswerController extends Controller
+class AnswersController extends Controller
 {
     public function answer($question_id){
         return view('answer',['question_id'=>$question_id]);

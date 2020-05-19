@@ -11,7 +11,6 @@
 |
 */
 
-use Illuminate\Http\Request;
 
 //質問表示画面（1つの質問の詳細画面）へ
 Route::get('/detail/{question_id}', 'QuestionsController@detail');
@@ -26,7 +25,7 @@ Route::get('/answer/{question_id}', 'AnswersController@answer');
 Route::post('/questionsave', 'QuestionsController@sendQuestion');
 
 //回答記録
-Route::post('/question/{question_id}/answer', 'AnswersController@sendAnswer');
+Route::post('/answer/question/{question_id}', 'AnswersController@sendAnswer');
 
 Auth::routes();
 

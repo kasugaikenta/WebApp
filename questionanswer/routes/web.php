@@ -32,4 +32,5 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-
+//質問一覧画面へ
+Route::get('/', 'QuestionsController@index');

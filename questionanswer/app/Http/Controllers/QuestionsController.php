@@ -35,4 +35,19 @@ class QuestionsController extends Controller
         $questions->save();
         return redirect('/');
     }
+    
+    //質問一覧画面表示処理
+    public function index()
+    {
+        $questions = Question::orderBy('created_at', 'desc')
+            ->get();
+        return view('index', ['questions' => $questions]);
+    }
+    
+    //質問表示画面表示処理
+    public function detail($question_id)
+    {
+        $question = Question::find($question_id);
+        return view('question_detail', ['question' => $question]);
+    }
 }

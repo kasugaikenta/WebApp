@@ -11,6 +11,7 @@ use Auth;
 class QuestionsController extends Controller
 {
     public function question(){
+        if(!Auth::check()) return redirect('/login');
         return view('question');
         header("Location:question.blade.php");
     }

@@ -10,7 +10,7 @@
       <div　class="col-sm-6">
         <label for="listing" class="col-sm-3 control-label">質問者名</label> 
         <div class="col-sm-6"> 
-          <input type="text" name="questioner" class="form-control" value="{{ old('questioner', $question->user_id) }}" style="background-color : white" readonly>
+          <input type="text" name="questioner" class="form-control" value="{{ old('questioner', Auth::user()->name) }}" style="background-color : white" readonly>
         </div>
         <label for="listing" class="col-sm-3 control-label">質問内容</label> 
         <div class="col-sm-6"> 

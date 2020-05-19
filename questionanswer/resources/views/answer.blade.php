@@ -1,7 +1,6 @@
 @extends('layouts.app')
 @section('content')
 
-
 <div class="panel-body">
   <!-- バリデーションエラーの場合に表示 --> 
   @include('common.errors')
@@ -11,7 +10,13 @@
       <label for="listing" class="col-sm-3 control-label">質問者名</label>
       <input type="hidden" name="question_id" value="{{$question_id}}">
       <div class="col-sm-6"> 
-        <input type="text" name="questioner" class="form-control" value="{{ old('questioner', Auth::user()->name) }}" style="background-color : white" readonly>
+      <?php
+        use App\User;
+        
+        $questioner=User::where('id',$question->user_id)
+          ->first();
+      ?>
+        <input type="text" name="questioner" class="form-control" value="{{ old('questioner', $questioner->name) }}" style="background-color : white" readonly>
       </div>
       <div>
         <label for="listing" class="col-sm-3 control-label">質問内容</label>

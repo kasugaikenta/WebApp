@@ -8,7 +8,7 @@ use App\Answer;
 use Validator;
 use Auth;
 
-class QuestionController extends Controller
+class QuestionsController extends Controller
 {
     public function question(){
         return view('question');

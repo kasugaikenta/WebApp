@@ -28,3 +28,6 @@ Route::post('/question_save', 'QuestionsController@sendQuestion');
 
 //回答記録
 Route::post('/question/{question_id}/answer', 'AnswersController@sendAnswer');
+
+//質問一覧画面へ
+Route::get('/', 'QuestionsController@index');

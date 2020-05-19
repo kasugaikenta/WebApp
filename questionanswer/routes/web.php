@@ -11,7 +11,6 @@
 |
 */
 
-use Illuminate\Http\Request;
 
 //質問表示画面（1つの質問の詳細画面）へ
 Route::get('/detail/{question_id}', 'QuestionsController@detail');

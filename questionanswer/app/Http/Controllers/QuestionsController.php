@@ -33,6 +33,7 @@ class QuestionsController extends Controller
         $questions->content = $request->question_content;
         $questions->user_id = Auth::user()->id;
         $questions->save();
+        Eval(\Psy\sh());
         return redirect('/');
     }
 }

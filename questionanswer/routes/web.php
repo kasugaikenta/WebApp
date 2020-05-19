@@ -11,6 +11,15 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+//質問表示画面（1つの質問の詳細画面）へ
+Route::get('/detail/{question_id}', 'QuestionsController@detail');
+
+//質問投稿画面へ
+Route::get('/question', 'QuestionsController@question');
+
+//回答投稿画面へ
+Route::get('/answer/{question_id}', 'QuestionsController@answer');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

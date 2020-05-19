@@ -14,3 +14,13 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+//質問投稿画面へ
+Route::get('/question', 'QuestionsController@question');
+
+Route::post('/question_save', 'QuestionsController@sendQuestion');
+
+//回答投稿画面へ
+Route::get('/answer/{question_id}', 'QuestionsController@answer');
+
+Route::post('/question/{question_id}/answer', 'QuestionsController@sendAnswer');

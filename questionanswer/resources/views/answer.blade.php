@@ -5,20 +5,37 @@
 <div class="panel-body">
   <!-- バリデーションエラーの場合に表示 --> 
   @include('common.errors')
-  <form action="{{ url('/card/edit')}}" method="POST" class="form-horizontal">
+  <form action="{{ url('/question/{{$question_id}}/answer')}}" method="POST" class="form-horizontal">
     {{csrf_field()}} 
-    <div class="form-group"> 
-        <label for="listing" class="col-sm-3 control-label">質問者名</label> 
+    <div class="form-group">
+      <label for="listing" class="col-sm-3 control-label">質問者名</label>
+      <input type="hidden" name="question_id" value="{{$question_id}}">
+      <div class="col-sm-6"> 
+        <input type="text" name="questioner" class="form-control" value="{{ old('questioner', Auth::user()->name) }}" style="background-color : white" readonly>
+      </div>
+      <div id="question">
+        <label for="listing" class="col-sm-3 control-label">質問内容</label>
         <div class="col-sm-6"> 
-            <input type="text" name="questioner" class="form-control" value="{{ old('questioner', Auth::user()->name) }}" readonly>
-        </div>
-      <div id="memo">
-        <label for="listing" class="col-sm-3 control-label">Q.</label> 
-        <div class="col-sm-6"> 
-          <textarea name="question" class="form-control" value="{{ old('content') }}" style="resize : none">{{$question->content}}</textarea> 
+          <textarea name="question_content" class="form-control" value="{{ old('$question->content') }}" style="resize : none; background-color : white" readonly>{{$question->content}}</textarea> 
         </div>
       </div>
-      <div class="col-sm-6" id="list">
+      <div id="answer">
+        <label for="listing" class="col-sm-3 control-label">回答</label>
+        <div class="col-sm-6"> 
+          <textarea name="answer_content" class="form-control" value="{{ old('$question->content') }}"></textarea> 
+        </div>
+      </div>
+      <?php
+        date_default_timezone_set('Asia/Tokyo');
+        $time = date("Y/m/d H:i:s");
+      ?>
+      <label for="listing" class="col-sm-3 control-label">回答日時</label> 
+      <div class="col-sm-6"> 
+        <input type="text" name="time" class="form-control" value="{{ old('time', $time) }}" style="background-color : white" readonly>
+      </div>
+      <?php
+      //カテゴリ機能搭載用
+      /*<div class="col-sm-6" id="list">
         <label for="listing" class="col-sm-3 control-label">カテゴリ</label>
         <select name="list_title" class="form-control">
           @foreach($listings as $listing)
@@ -28,15 +45,16 @@
             {{$listing->title}}</option>
           @endforeach
         </select>
-      </div>
+      </div>*/
+      ?>
     </div>
     <div class="form-group"> 
-        <div id="update"> 
-          <button type="submit" class="btn btn-default">
-            回答する</i> 
-          </button> 
-        </div>
+      <div id="update"> 
+        <button type="submit" class="btn btn-default">
+          回答する</i> 
+        </button> 
       </div>
+    </div>
   </form>
 </div>
 @endsection

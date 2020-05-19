@@ -32,13 +32,17 @@ class QuestionsController extends Controller
             $title = mb_substr($request->question_content,0,30);
             $continue = "...";
             $title = $title.$continue;
+        } else {
+            $title = $request->question_content;
         }
             
         $questions = new Question;
         $questions->title = $title;
         $questions->content = $request->question_content;
         $questions->user_id = Auth::user()->id;
-        $question->save();
+        $questions->save();
+        
+        return redirect('/');
     }
     
     //質問一覧画面表示処理

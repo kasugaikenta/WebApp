@@ -26,7 +26,7 @@ Route::get('/answer/{question_id}', 'AnswersController@answer');
 Route::post('/questionsave', 'QuestionsController@sendQuestion');
 
 //回答記録
-Route::post('/question/{question_id}/answer', 'AnswersController@sendAnswer');
+Route::post('/answer/question/{question_id}', 'AnswersController@sendAnswer');
 
 Auth::routes();
 

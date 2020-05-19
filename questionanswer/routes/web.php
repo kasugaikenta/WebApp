@@ -10,11 +10,6 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/', function () {
-    return view('welcome');
-});
-
 //質問表示画面（1つの質問の詳細画面）へ
 Route::get('/detail/{question_id}', 'QuestionsController@detail');
 

@@ -17,7 +17,7 @@ Route::get('/detail/{question_id}', 'QuestionsController@detail');
 Route::get('/question', 'QuestionsController@question');
 
 //回答投稿画面へ
-Route::get('/answer/{question_id}', 'QuestionsController@answer');
+Route::get('/answer/{question_id}', 'AnswersController@answer');
 
 Auth::routes();
 
@@ -27,4 +27,4 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::post('/question_save', 'QuestionsController@sendQuestion');
 
 //回答記録
-Route::post('/question/{question_id}/answer', 'QuestionsController@sendAnswer');
+Route::post('/question/{question_id}/answer', 'AnswersController@sendAnswer');

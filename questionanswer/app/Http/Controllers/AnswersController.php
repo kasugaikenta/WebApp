@@ -33,6 +33,14 @@ class AnswersController extends Controller
         $answers->content = $request->answer_content;
         $answers->question_id = $request->question_id;
         $answers->save();
+        
+        $questions = Question::where('id', $answers->question_id)
+            ->first();
+            
+        $questions->flag = true;
+        $questions->save();
+        
+        Eval(\Psy\sh());
         return redirect('/');
     }
     

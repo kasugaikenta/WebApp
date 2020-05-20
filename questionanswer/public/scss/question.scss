@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Kosugi+Maru&display=swap');
+
+html{
+    height: 100%;
+}
+
+body {
+    font-family: 'Kosugi Maru', sans-serif!important;
+}
+
+.py-4{
+    background-color: #fbe2b4;
+    height: 550px;
+    overflow: hidden;
+}
+
+.navbar {
+    background-color: #00c8f8!important;
+}
+
+.form-group {
+    width: 100%;
+}
+
+
+.col-sm-6 {
+    max-width: 70%!important;
+}
+
+.btn {
+    color: #fff;
+    background-color: #59c4c5;
+    opacity: 0.8;
+    
+    &:hover {
+        opacity: 1;
+    }
+}

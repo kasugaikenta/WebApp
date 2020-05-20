@@ -34,4 +34,17 @@ Route::get('/home', 'HomeController@index')->name('home');
 //質問一覧画面へ
 Route::get('/', 'QuestionsController@index');
 
+//マイページ
 Route::get('/question/myquestions/', 'QuestionsController@my_questions');
+
+//user詳細
+Route::get('/user/show','HomeController@show')->name('user_show');
+
+//user編集
+Route::get('/user/edit','HomeController@edit');
+
+//user編集update
+Route::post('/user/edit/update','HomeController@update');
+
+//password確認画面
+Route::get('/user/password','HomeController@confirm');

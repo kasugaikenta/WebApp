@@ -8,6 +8,8 @@ use App\Answer;
 use Validator;
 use Auth;
 
+date_default_timezone_set('Asia/Tokyo');
+
 class AnswersController extends Controller
 {
     public function answer($question_id){
@@ -20,7 +22,7 @@ class AnswersController extends Controller
     
     public function sendAnswer(Request $request)
     {
-        //Validatorを使って入力された値のチェック(バリデーション)処理　（今回は255以上と空欄の場合エラーになります）
+        //Validatorを使って入力された値のチェック(バリデーション)処理　
         $validator = Validator::make($request->all() , ['answer_content' => 'required|max:1000', ]);
 
         //バリデーションの結果がエラーの場合

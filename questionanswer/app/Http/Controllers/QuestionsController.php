@@ -31,7 +31,7 @@ class QuestionsController extends Controller
         
         if(mb_strlen($request->question_content,'euc') > 30){
             $title = $request->question_content;
-            $title = mb_substr($request->question_content,0,30);
+            $title = mb_substr($request->question_content,0,28, 'euc');
             $continue = "...";
             $title = $title.$continue;
         } else {

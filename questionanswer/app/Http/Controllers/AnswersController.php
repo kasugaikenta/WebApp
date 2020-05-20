@@ -8,6 +8,8 @@ use App\Answer;
 use Validator;
 use Auth;
 
+date_default_timezone_set('Asia/Tokyo');
+
 class AnswersController extends Controller
 {
     public function answer($question_id){

@@ -1,5 +1,8 @@
 @extends('layouts.app')
 @section('content')
+<?php
+    date_default_timezone_set('Asia/Tokyo');
+?>
 
 <div class="question_list_container">
     <div class="question_list">

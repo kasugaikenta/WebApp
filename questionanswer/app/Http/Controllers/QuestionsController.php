@@ -29,9 +29,9 @@ class QuestionsController extends Controller
             // 上記では、入力画面に戻りエラーメッセージと、入力し���内容をフォーム表示させる処理を記述しています
         }
         
-        if(mb_strlen($request->question_content,'euc') > 30){
+        if(mb_strlen($request->question_content) > 30){
             $title = $request->question_content;
-            $title = mb_substr($request->question_content,0,28, 'euc');
+            $title = mb_substr($request->question_content,0,30);
             $continue = "...";
             $title = $title.$continue;
         } else {

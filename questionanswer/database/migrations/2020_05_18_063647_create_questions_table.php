@@ -18,6 +18,10 @@ class CreateQuestionsTable extends Migration
             $table->string('title');
             $table->string('content');
             $table->integer('user_id');
+            $table->boolean('flag')->default(false);
+            $table->string('tag1')->default('-');
+            $table->string('tag2')->default('-');
+            $table->string('tag3')->default('-');
             $table->timestamps();
         });
     }

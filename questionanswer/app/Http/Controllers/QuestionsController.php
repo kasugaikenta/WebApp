@@ -42,7 +42,6 @@ class QuestionsController extends Controller
         $questions->user_id = Auth::user()->id;
         $questions->flag = FALSE;
         $questions->save();
-        Eval(\Psy\sh());
         return redirect('/');
     }
     

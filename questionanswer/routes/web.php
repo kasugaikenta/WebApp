@@ -35,3 +35,6 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/', 'QuestionsController@index');
 
 Route::get('/question/myquestions/', 'QuestionsController@my_questions');
+
+//質問検索
+Route::post('/search','QuestionsController@search');

@@ -69,4 +69,19 @@ class QuestionsController extends Controller
         $questions = Question::where('user_id',Auth::user()->id)->get();
         return view('mypage', ['questions' => $questions]);
     }
+    
+    public function search(Request $request){
+        if($request->categorie_tag == "すべて"){
+            $questions = Question::orderBy('created_at', 'desc')
+            ->get();
+            return view('index', ['questions' => $questions]);
+        }else{
+            $questions=Question::where('tag1',$request->categorie_tag)
+                ->orWhere('tag2', $request->categorie_tag)
+                ->orWhere('tag3', $request->categorie_tag)
+                ->orderBy('created_at', 'desc')
+                ->get();
+        }
+        return view('index', ['questions'=>$questions]);
+    }
 }

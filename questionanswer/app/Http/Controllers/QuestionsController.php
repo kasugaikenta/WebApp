@@ -40,7 +40,6 @@ class QuestionsController extends Controller
         $questions->title = $title;
         $questions->content = $request->question_content;
         $questions->user_id = Auth::user()->id;
-
         $questions->flag = FALSE;
         $questions->tag1 = $request->categorie_tag1;
         $questions->tag2 = $request->categorie_tag2;

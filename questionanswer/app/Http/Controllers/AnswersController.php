@@ -40,7 +40,6 @@ class AnswersController extends Controller
         $questions->flag = true;
         $questions->save();
         
-        Eval(\Psy\sh());
         return redirect('/');
     }
     

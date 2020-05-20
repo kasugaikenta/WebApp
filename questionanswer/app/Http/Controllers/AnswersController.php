@@ -22,7 +22,7 @@ class AnswersController extends Controller
     
     public function sendAnswer(Request $request)
     {
-        //Validatorを使って入力された値のチェック(バリデーション)処理　（今回は255以上と空欄の場合エラーになります）
+        //Validatorを使って入力された値のチェック(バリデーション)処理　
         $validator = Validator::make($request->all() , ['answer_content' => 'required|max:1000', ]);
 
         //バリデーションの結果がエラーの場合

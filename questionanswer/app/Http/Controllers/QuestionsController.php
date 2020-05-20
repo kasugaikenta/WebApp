@@ -40,8 +40,8 @@ class QuestionsController extends Controller
         $questions->title = $title;
         $questions->content = $request->question_content;
         $questions->user_id = Auth::user()->id;
-        $questions->flag = FALSE;
         $questions->save();
+        
         return redirect('/');
     }
     

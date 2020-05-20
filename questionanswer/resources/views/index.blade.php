@@ -31,13 +31,11 @@
                 <a class="question_answer_link" href="/detail/{{$question->id}}">
                     <div class="question_title">{{ $question->user->name }}</div> <!-- ユーザ名 pタグのがいい？ -->
                     <h3 class="question_title">{{ $question->title }}</h3> <!-- 質問のタイトル -->
-                    <div class="chose_categorie">
-                        <input type="text" value="{{old('tag1',$question->tag1)}}" style="background-color : white" readonly>
-                        <input type="text" value="{{old('tag2',$question->tag2)}}" style="background-color : white" readonly>
-                        <input type="text" value="{{old('tag3',$question->tag3)}}" style="background-color : white" readonly>
-                    </div>
                     <div class="question_time">{{ $question->created_at }}</div> <!-- 投稿日時 -->
                 </a>
+                <div class="chose_categorie">
+                        <h4>Tag<span style="padding : 3px"></span>:<span style="padding : 5px"></span>{{$question->tag1}}<span style="padding : 20px"></span>{{$question->tag2}}<span style="padding : 20px"></span>{{$question->tag3}}</h4>
+                </div>
             </div>
         @endforeach
     </div>

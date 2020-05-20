@@ -40,6 +40,13 @@ class QuestionsController extends Controller
         $questions->title = $title;
         $questions->content = $request->question_content;
         $questions->user_id = Auth::user()->id;
+<<<<<<< HEAD
+=======
+        $questions->flag = FALSE;
+        $questions->tag1 = $request->categorie_tag1;
+        $questions->tag2 = $request->categorie_tag2;
+        $questions->tag3 = $request->categorie_tag3;
+>>>>>>> c14b52a4b6d3c87d31e8282cd68433fc7be4667f
         $questions->save();
         
         return redirect('/');

@@ -38,20 +38,12 @@
       <div class="col-sm-6"> 
         <input type="text" name="time" class="form-control" value="{{ old('time', $time) }}" style="background-color : white" readonly>
       </div>
-      <?php
-      //カテゴリ機能搭載用
-      /*<div class="col-sm-6" id="list">
-        <label for="listing" class="col-sm-3 control-label">カテゴリ</label>
-        <select name="list_title" class="form-control">
-          @foreach($listings as $listing)
-            <option value="{{$listing->id}}"
-              @if(old('list_title',$cards[0]->listing->id) == $listing->id)selected
-              @endif>
-            {{$listing->title}}</option>
-          @endforeach
-        </select>
-      </div>*/
-      ?>
+      <label for="listing" class="col-sm-3 control-label">カテゴリ</label>
+      <div class="col-sm-6">
+        <input type="text" value="{{old('tag1',$question->tag1)}}" style="background-color : white" readonly>
+        <input type="text" value="{{old('tag2',$question->tag2)}}" style="background-color : white" readonly>
+        <input type="text" value="{{old('tag3',$question->tag3)}}" style="background-color : white" readonly>
+      </div>
     </div>
     
     <div class="form-group"> 

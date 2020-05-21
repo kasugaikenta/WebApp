@@ -1,11 +1,13 @@
-@import url('https://fonts.googleapis.com/css2?family=Kosugi+Maru&display=swap');
+//フォントの変更20200520 17:49
+@import url('https://fonts.googleapis.com/css2?family=Sawarabi+Gothic&display=swap');
 
 html{
     height: 100%;
 }
 
 body {
-    font-family: 'Kosugi Maru', sans-serif!important;
+    //フォントの変更20200520 17:49
+    font-family: 'Sawarabi Gothic', sans-serif;;
 }
 
 .py-4{
@@ -15,6 +17,9 @@ body {
 
 .navbar {
     background-color: #00c8f8!important;
+    position: fixed;
+    width: 100%;
+    z-index: 10;
 }
 
 .form-group {
@@ -30,8 +35,17 @@ body {
     color: #fff;
     background-color: #59c4c5;
     opacity: 0.8;
+    font-size: 20px;
+    display: block;
+    margin: 0 auto;
+    width: 200px;
+    height: 50px;
     
     &:hover {
         opacity: 1;
     }
+}
+
+.padding-div {
+    padding-top: 50px;
 }

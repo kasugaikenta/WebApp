@@ -4,6 +4,12 @@
     date_default_timezone_set('Asia/Tokyo');
 ?>
 
+<!-- stylesheetの読み込み20200520 16:04 -->
+<link href="{{ asset('css/index.css') }}" rel="stylesheet">
+
+<!-- imageの追加20200520 -->
+<img class="top" src="{{ secure_asset('/images/top.png') }}">
+
 <div class="question_list_container">
     <div class="question_list">
         <h2>質問一覧</h2>
@@ -41,19 +47,25 @@
         ?>
         @foreach ($questions as $question)
             <div class="question_wrapper">
-                <a class="question_answer_link" href="/detail/{{$question->id}}">
-                    <div class="question_title">{{ $question->user->name }}</div> <!-- ユーザ名 pタグのがいい？ -->
-                    <h3 class="question_title">{{ $question->title }}</h3> <!-- 質問のタイトル -->
-                    <div class="question_time">{{ $question->created_at }}</div> <!-- 投稿日時 -->
-                </a>
-                <div class="chose_categorie">
-                        <h4>Tag<span style="padding : 3px"></span>:<span style="padding : 5px"></span>{{$question->tag1}}<span style="padding : 20px"></span>{{$question->tag2}}<span style="padding : 20px"></span>{{$question->tag3}}</h4>
+                <!-- divタグ追加20200520 17:37 -->
+                <div class="question-list">
+                    <a class="question_answer_link" href="/detail/{{$question->id}}">
+                        <h3 class="question_title">{{ $question->title }}</h3> <!-- 質問のタイトル -->
+                        <div class="chose_categorie">
+                            <input type="text" value="{{old('tag1',$question->tag1)}}" style="background-color : white" readonly>
+                            <input type="text" value="{{old('tag2',$question->tag2)}}" style="background-color : white" readonly>
+                            <input type="text" value="{{old('tag3',$question->tag3)}}" style="background-color : white" readonly>
+                        </div>
+                        <!-- 20200520 17:38 -->
+                        <div class="question_user">{{ $question->user->name }}</div> <!-- ユーザ名 pタグのがいい？ -->
+                        <div class="question_time">{{ $question->created_at }}</div> <!-- 投稿日時 -->
+                    </a>
                 </div>
             </div>
         @endforeach
     </div>
     <div class="btnWrapper">
-        <a class="questionBtn" href="{{ url('/question') }}">質問する</a> <!-- ログインしてなかったらログイン画面へ -->
+        <a class="btn" href="{{ url('/question') }}">質問する</a> <!-- ログインしてなかったらログイン画面へ -->
     </div>
 </div>
 @endsection

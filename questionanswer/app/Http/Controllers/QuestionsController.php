@@ -86,4 +86,31 @@ class QuestionsController extends Controller
         }
         return view('index', ['questions'=>$questions]);
     }
+    
+    public function keywords(Request $request)
+    {
+        $questions=Question::orderBy('created_at','desc')
+            ->get();
+        
+        $sucsess = array();
+        $failure = array();
+        $count = 0;
+        $count_failure = 0;
+        
+        foreach($questions as $question){
+            if(mb_stristr($question->content,$request->search_keywords) !== false){
+                $sucsess[$count]=$question;
+                $count++;
+            }else{
+                $failure[$count_failure]=$question;
+                $count_failure++;
+            }
+        
+        }
+        if($count > 0){
+            return view('index',['questions'=>$sucsess,'count'=>$count]);
+        }else{
+            return view('index',['questions'=>$sucsess,'count'=>$count]);
+        }
+    }
 }

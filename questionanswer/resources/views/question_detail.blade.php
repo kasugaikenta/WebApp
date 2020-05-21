@@ -12,9 +12,7 @@
         <div class="question_name">{{ $question->user->name }}</div> <!-- 「ユーザ名：」って文字入れる？ -->
         <div class="question_content">{{ $question->content }}</div> <!-- 内容 -->
         <div class="chose_categorie">
-            <input type="text" value="{{old('tag1',$question->tag1)}}" style="background-color : white" readonly>
-            <input type="text" value="{{old('tag2',$question->tag2)}}" style="background-color : white" readonly>
-            <input type="text" value="{{old('tag3',$question->tag3)}}" style="background-color : white" readonly>
+            <h4>Tag<span style="padding : 3px"></span>:<span style="padding : 5px"></span>{{$question->tag1}}<span style="padding : 20px"></span>{{$question->tag2}}<span style="padding : 20px"></span>{{$question->tag3}}</h4>
         </div>
         <div class="question_time">{{ $question->created_at }}</div> <!-- 「投稿日時：」って文字入れる？表示形式わからん -->
     </div>

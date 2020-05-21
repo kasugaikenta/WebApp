@@ -51,3 +51,6 @@ Route::post('/user/edit/update','HomeController@update');
 
 //password確認画面
 Route::get('/user/password','HomeController@confirm');
+
+//質問キーワード検索
+Route::post('/searchkeywords','QuestionsController@keywords');

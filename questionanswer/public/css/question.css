@@ -27,13 +27,25 @@ body {
   opacity: 0.8;
   font-size: 20px;
   display: block;
-  margin: 10px auto;
+  margin: 60px auto 30px;
   width: 200px;
   height: 50px;
 }
 .btn:hover {
   opacity: 1;
 }
+.btn.fsize {
+  font-size: 17px;
+}
+.btn.a-btn {
+  padding-top: 10px;
+  margin-top: 0;
+  background-color: #fff;
+  color: #59c4c5;
+}
 .padding-div {
-  padding-top: 50px;
+  padding-top: 55px;
+}
+.padding-auth {
+  padding-top: 30px;
 }

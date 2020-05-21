@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="container">
-    <div class="row justify-content-center">
+    <div class="row justify-content-center padding-auth">
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">{{ __('新規登録') }}</div>
@@ -61,12 +61,10 @@
                             </div>
                         </div>
 
-                        <div class="form-group row mb-0">
-                            <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('登録') }}
-                                </button>
-                            </div>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-primary">
+                                {{ __('登録') }}
+                            </button>
                         </div>
                     </form>
                 </div>

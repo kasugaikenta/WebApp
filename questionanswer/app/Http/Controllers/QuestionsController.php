@@ -47,6 +47,7 @@ class QuestionsController extends Controller
         $questions->tag2 = $request->categorie_tag2;
         $questions->tag3 = $request->categorie_tag3;
         $questions->save();
+        
         return redirect('/');
     }
     

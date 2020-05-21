@@ -4,7 +4,7 @@
 <div class="question_list_container">
     <div class="question_list">
         <h2></h2>
-        <h2>マイページ 質問一覧</h2>
+        <h2>マイページ あなたの質問一覧</h2>
         @foreach ($questions as $question)
             @if($question->flag == 1)
                 <!--styleのbackgroundは消しても大丈夫です。-->

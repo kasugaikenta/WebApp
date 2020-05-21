@@ -7,8 +7,22 @@
   margin: 0 !important;
   padding: 0 !important;
 }
-.py-4 .top {
+.py-4 .top-page {
+  position: relative;
+}
+.py-4 .top-page .filter {
+  background-color: #797979;
+}
+.py-4 .top-page .filter .filter-image {
   width: 100%;
+  display: block;
+  opacity: 1;
+}
+.py-4 .top-page h1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: white;
 }
 h2 {
   padding: 10px;

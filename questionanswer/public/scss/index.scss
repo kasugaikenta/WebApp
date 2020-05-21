@@ -8,13 +8,31 @@
         padding: 0!important;
     }
     
-    .top{
-        width: 100%;
+    .top-page{
+        
+        position: relative;
+        
+        .filter{
+            background-color: #797979;
+            
+            .filter-image{
+                width: 100%;
+                display: block;
+                opacity: 1;
+        }
+            
+            
+        }
+        
+        h1 {
+            position: absolute;
+            top: 0;
+            left: 0;
+            color: white;
+        }
+        
     }
-    
-    img{
-        //opacity: 0.7;
-    }
+
 }
 
 h2{

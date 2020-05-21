@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Sawarabi+Gothic&display=swap');
 
+//test用コメントアウト
 .py-4 {
     padding-top: 0!important;
     background-color: #f1f1f1;
@@ -74,13 +75,6 @@
 
 }
 
-#question-card {
-    
-    :hover {
-        transform: translateY(-2px);
-    }
-}
-
 .question_list_container {
     margin: 100px;
 }
@@ -91,6 +85,7 @@
     border-radius: 5px;
     border-right: solid 15px #59c4c5;
     box-shadow: 2px 2px 6px rgba(0,0,0,.3);
+
 
     
     .question-list {

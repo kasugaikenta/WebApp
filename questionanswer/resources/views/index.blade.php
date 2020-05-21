@@ -21,7 +21,7 @@
 
 <div class="question_list_container">
     <div class="question_list">
-        <h2>質問一覧</h2>
+        <div　id="top-h2"><h2>質問一覧</h2></div>
         <form action="{{ url('search')}}" method="POST">
         {{csrf_field()}} 
             <label for="listing" class="col-sm-3 control-label">タグ検索</label>
@@ -54,24 +54,34 @@
                 echo("<p>↓</p>");
             }
         ?>
-        @foreach ($questions as $question)
-            <div class="question_wrapper">
-                <!-- divタグ追加20200520 17:37 -->
-                <div class="question-list">
-                    <a class="question_answer_link" href="/detail/{{$question->id}}">
-                        <h3 class="question_title">{{ $question->title }}</h3> <!-- 質問のタイトル -->
-                        <div class="chose_categorie">
-                            <input type="text" value="{{old('tag1',$question->tag1)}}" style="background-color : white" readonly>
-                            <input type="text" value="{{old('tag2',$question->tag2)}}" style="background-color : white" readonly>
-                            <input type="text" value="{{old('tag3',$question->tag3)}}" style="background-color : white" readonly>
+        <div class="container">
+            <div class="row">
+                @foreach ($questions as $question)
+                    <div class="col-md-5 question_wrapper">
+                        <!-- divタグ追加20200520 17:37 -->
+                        <div class="question-list">
+                            <a class="question_answer_link" href="/detail/{{$question->id}}">
+                                <h3 class="question_title">{{ $question->title }}</h3> <!-- 質問のタイトル -->
+                                <div class="chose_categorie">
+                                    @if($question->tag1 != "-")
+                                        <input type="text" value="{{old('tag1',$question->tag1)}}" style="background-color : white" readonly>
+                                    @endif
+                                    @if($question->tag2 != "-")
+                                        <input type="text" value="{{old('tag2',$question->tag2)}}" style="background-color : white" readonly>
+                                    @endif
+                                    @if($question->tag3 != "-")
+                                        <input type="text" value="{{old('tag3',$question->tag3)}}" style="background-color : white" readonly>
+                                    @endif
+                                </div>
+                                <!-- 20200520 17:38 -->
+                                <div class="question_user">{{ $question->user->name }}</div> <!-- ユーザ名 pタグのがいい？ -->
+                                <div class="question_time">{{ $question->created_at }}</div> <!-- 投稿日時 -->
+                            </a>
                         </div>
-                        <!-- 20200520 17:38 -->
-                        <div class="question_user">{{ $question->user->name }}</div> <!-- ユーザ名 pタグのがいい？ -->
-                        <div class="question_time">{{ $question->created_at }}</div> <!-- 投稿日時 -->
-                    </a>
-                </div>
+                    </div>
+                @endforeach
             </div>
-        @endforeach
+        </div>
     </div>
     <div class="btnWrapper">
         <a class="btn" href="{{ url('/question') }}">質問する</a> <!-- ログインしてなかったらログイン画面へ -->

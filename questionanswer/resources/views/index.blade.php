@@ -52,9 +52,15 @@
                     <a class="question_answer_link" href="/detail/{{$question->id}}">
                         <h3 class="question_title">{{ $question->title }}</h3> <!-- 質問のタイトル -->
                         <div class="chose_categorie">
-                            <input type="text" value="{{old('tag1',$question->tag1)}}" style="background-color : white" readonly>
-                            <input type="text" value="{{old('tag2',$question->tag2)}}" style="background-color : white" readonly>
-                            <input type="text" value="{{old('tag3',$question->tag3)}}" style="background-color : white" readonly>
+                            @if($question->tag1 != "-")
+                                <input type="text" value="{{old('tag1',$question->tag1)}}" style="background-color : white" readonly>
+                            @endif
+                            @if($question->tag2 != "-")
+                                <input type="text" value="{{old('tag2',$question->tag2)}}" style="background-color : white" readonly>
+                            @endif
+                            @if($question->tag3 != "-")
+                                <input type="text" value="{{old('tag3',$question->tag3)}}" style="background-color : white" readonly>
+                            @endif
                         </div>
                         <!-- 20200520 17:38 -->
                         <div class="question_user">{{ $question->user->name }}</div> <!-- ユーザ名 pタグのがいい？ -->

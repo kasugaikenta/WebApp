@@ -5,14 +5,18 @@
 ?>
 
 <!-- stylesheetの読み込み20200520 16:04 -->
-<link href="{{ asset('css/index.css') }}" rel="stylesheet">
+<link href="{{ secure_asset('css/index.css') }}" rel="stylesheet">
 
 <!-- imageの追加20200520 -->
 <div class="top-page">
     <div class="filter">
         <img class="filter-image" src="{{ secure_asset('/images/top2.png') }}">
+        <div id="main_titles">
+            <h1>engのたまり場</h1>
+        </div>
+        <p>ひとりじゃない、みんなで作り上げよう</p>
     </div>
-    <h1>engのたまり場</h1>
+    
 </div>
 
 <div class="question_list_container">

@@ -48,3 +48,6 @@ Route::post('/user/edit/update','HomeController@update');
 
 //password確認画面
 Route::get('/user/password','HomeController@confirm');
+
+//通知flag０へ
+Route::get('/question/viewed/{question_id}','QuestionsController@viewed');

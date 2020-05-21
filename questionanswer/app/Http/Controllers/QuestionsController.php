@@ -66,7 +66,16 @@ class QuestionsController extends Controller
 
     //マイページ表示処理
     public function my_questions(){
-        $questions = Question::where('user_id',Auth::user()->id)->get();
+        $questions = Question::where('user_id',Auth::user()->id)->orderBy('updated_at', 'desc')->get();
         return view('mypage', ['questions' => $questions]);
+    }
+    
+    //通知機能
+    public function viewed($question_id){
+        $question = Question::where('id',$question_id)->first();
+        $question->flag = FALSE;
+        $question->save();
+        
+        return view('question_detail', ['question' => $question]);
     }
 }

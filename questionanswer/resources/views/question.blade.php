@@ -60,9 +60,9 @@
             <option value="{{'Ruby'}}">Ruby</option>
           </select>
         </div>
-        <div class="form_group col-sm-3">
+      </div>
+      <div class="form_group">
           <button type="submit" class="btn btn-default">質問する</button>
-        </div>
       </div>
     </div>
   </form>

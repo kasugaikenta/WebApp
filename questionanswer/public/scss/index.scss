@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Sawarabi+Gothic&display=swap');
+
 .py-4 {
     padding-top: 0!important;
     background-color: #f1f1f1;
@@ -24,11 +26,38 @@
             
         }
         
-        h1 {
+        #main_titles {
+            width : 50%;
+            height : 100%;
             position: absolute;
+            display : flex;
+            align-items : center;
             top: 0;
             left: 0;
             color: white;
+            
+            h1{
+                width : 100%;
+                text-align : center;
+                font-size : 4.5vw;
+                font-family: 'Sawarabi Gothic', sans-serif;
+            }
+            
+            
+        }
+        
+        p{
+            color : white;
+            margin-top : 4.5vw;
+            height : 100%;
+            width : 50vw;
+            position : absolute;
+            top : 0;
+            left : 0;
+            display : flex;
+            align-items : center;
+            justify-content : center;
+            font-family: 'Sawarabi Gothic', sans-serif;
         }
         
     }
@@ -74,3 +103,5 @@
         color: black;
     }
 }
+
+

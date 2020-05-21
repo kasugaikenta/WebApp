@@ -1,5 +1,8 @@
 @extends('layouts.app')
 @section('content')
+<?php
+    date_default_timezone_set('Asia/Tokyo');
+?>
 
 <!-- stylesheetの読み込み20200520 16:04 -->
 <link href="{{ asset('css/index.css') }}" rel="stylesheet">

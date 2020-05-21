@@ -47,6 +47,7 @@ class QuestionsController extends Controller
         $questions->tag2 = $request->categorie_tag2;
         $questions->tag3 = $request->categorie_tag3;
         $questions->save();
+        
         return redirect('/');
     }
     
@@ -79,7 +80,7 @@ class QuestionsController extends Controller
         $question->save();
         
         return view('question_detail', ['question' => $question]);
-      }
+    }
   
     public function search(Request $request){
         if($request->categorie_tag == "すべて"){

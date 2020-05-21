@@ -8,7 +8,12 @@
 <link href="{{ asset('css/index.css') }}" rel="stylesheet">
 
 <!-- imageの追加20200520 -->
-<img class="top" src="{{ secure_asset('/images/top2.png') }}">
+<div class="top-page">
+    <div class="filter">
+        <img class="filter-image" src="{{ secure_asset('/images/top2.png') }}">
+    </div>
+    <h1>engのたまり場</h1>
+</div>
 
 <div class="question_list_container">
     <div class="question_list">

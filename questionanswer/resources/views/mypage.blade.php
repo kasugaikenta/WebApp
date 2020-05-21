@@ -14,15 +14,16 @@
                     @if($question->flag == 1)
                         <!--styleのbackgroundは消しても大丈夫です。-->
                         <div class="col-md-5 question_wrapper" style="background-color:#f6993f;">
-                            <div class="tuuti"></div>
-                            <div class="question-list">
-                                <a class="question_answer_link" href="/question/viewed/{{$question->id}}">
-                                    <!--消してもいいやつ-->
-                                    <!--<i class="glyphicon glyphicon-ok">通知</i>-->
-                                    <!--通知機能をわかりやすくしたかったからつけたやつ-->
-                                    <h3 class="question_title">{{ $question->title }}</h3><!-- 質問のタイトル -->
-                                    <div class="question_time">{{ date($question->created_at) }}</div>
-                                </a>
+                            <div class="tuuti">
+                                <div class="question-list">
+                                    <a class="question_answer_link" href="/question/viewed/{{$question->id}}">
+                                        <!--消してもいいやつ-->
+                                        <!--<i class="glyphicon glyphicon-ok">通知</i>-->
+                                        <!--通知機能をわかりやすくしたかったからつけたやつ-->
+                                        <h3 class="question_title">{{ $question->title }}</h3><!-- 質問のタイトル -->
+                                        <div class="question_time">{{ date($question->created_at) }}</div>
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     @endif

@@ -5,10 +5,15 @@
 ?>
 
 <!-- stylesheetの読み込み20200520 16:04 -->
-<link href="{{ secure_asset('css/index.css') }}" rel="stylesheet">
+<link href="{{ asset('css/index.css') }}" rel="stylesheet">
 
 <!-- imageの追加20200520 -->
-<img class="top" src="{{ secure_asset('/images/top2.png') }}">
+<div class="top-page">
+    <div class="filter">
+        <img class="filter-image" src="{{ secure_asset('/images/top2.png') }}">
+    </div>
+    <h1>engのたまり場</h1>
+</div>
 
 <div class="question_list_container">
     <div class="question_list">
@@ -52,15 +57,9 @@
                     <a class="question_answer_link" href="/detail/{{$question->id}}">
                         <h3 class="question_title">{{ $question->title }}</h3> <!-- 質問のタイトル -->
                         <div class="chose_categorie">
-                            @if($question->tag1 != "-")
-                                <input type="text" value="{{old('tag1',$question->tag1)}}" style="background-color : white" readonly>
-                            @endif
-                            @if($question->tag2 != "-")
-                                <input type="text" value="{{old('tag2',$question->tag2)}}" style="background-color : white" readonly>
-                            @endif
-                            @if($question->tag3 != "-")
-                                <input type="text" value="{{old('tag3',$question->tag3)}}" style="background-color : white" readonly>
-                            @endif
+                            <input type="text" value="{{old('tag1',$question->tag1)}}" style="background-color : white" readonly>
+                            <input type="text" value="{{old('tag2',$question->tag2)}}" style="background-color : white" readonly>
+                            <input type="text" value="{{old('tag3',$question->tag3)}}" style="background-color : white" readonly>
                         </div>
                         <!-- 20200520 17:38 -->
                         <div class="question_user">{{ $question->user->name }}</div> <!-- ユーザ名 pタグのがいい？ -->

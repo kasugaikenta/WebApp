@@ -5,7 +5,7 @@
 ?>
 
 <!-- stylesheetの読み込み20200520 16:04 -->
-<link href="{{ asset('css/index.css') }}" rel="stylesheet">
+<link href="{{ secure_asset('css/index.css') }}" rel="stylesheet">
 
 <!-- imageの追加20200520 -->
 <img class="top" src="{{ secure_asset('/images/top2.png') }}">

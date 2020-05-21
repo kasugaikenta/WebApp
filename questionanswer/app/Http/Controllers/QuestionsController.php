@@ -80,7 +80,7 @@ class QuestionsController extends Controller
         $question->save();
         
         return view('question_detail', ['question' => $question]);
-      }
+    }
   
     public function search(Request $request){
         if($request->categorie_tag == "すべて"){

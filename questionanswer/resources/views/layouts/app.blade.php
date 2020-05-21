@@ -17,8 +17,12 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
     <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/question.css') }}" rel="stylesheet">
+    <link href="{{ secure_asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ secure_asset('css/answer.css') }}" rel="stylesheet">
+    <link href="{{ secure_asset('css/index.css') }}" rel="stylesheet">
+    <link href="{{ secure_asset('css/main.css') }}" rel="stylesheet">
+    <link href="{{ secure_asset('css/mypage.css') }}" rel="stylesheet">
+    <link href="{{ secure_asset('css/question.css') }}" rel="stylesheet">
     
     
 </head>

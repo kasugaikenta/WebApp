@@ -8,6 +8,8 @@ use App\Answer;
 use Validator;
 use Auth;
 
+date_default_timezone_set('Asia/Tokyo');
+
 class QuestionsController extends Controller
 {
     public function question(){
@@ -27,7 +29,7 @@ class QuestionsController extends Controller
             // 上記では、入力画面に戻りエラーメッセージと、入力し���内容をフォーム表示させる処理を記述しています
         }
         
-        if(mb_strlen($request->question_content,'euc') > 30){
+        if(mb_strlen($request->question_content) > 30){
             $title = $request->question_content;
             $title = mb_substr($request->question_content,0,30);
             $continue = "...";
@@ -77,5 +79,20 @@ class QuestionsController extends Controller
         $question->save();
         
         return view('question_detail', ['question' => $question]);
+      }
+  
+    public function search(Request $request){
+        if($request->categorie_tag == "すべて"){
+            $questions = Question::orderBy('created_at', 'desc')
+            ->get();
+            return view('index', ['questions' => $questions]);
+        }else{
+            $questions=Question::where('tag1',$request->categorie_tag)
+                ->orWhere('tag2', $request->categorie_tag)
+                ->orWhere('tag3', $request->categorie_tag)
+                ->orderBy('created_at', 'desc')
+                ->get();
+        }
+        return view('index', ['questions'=>$questions]);
     }
 }

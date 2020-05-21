@@ -37,6 +37,9 @@ Route::get('/', 'QuestionsController@index');
 //マイページ
 Route::get('/question/myquestions/', 'QuestionsController@my_questions');
 
+//質問検索
+Route::post('/search','QuestionsController@search');
+
 //user詳細
 Route::get('/user/show','HomeController@show')->name('user_show');
 

@@ -1,5 +1,8 @@
 @extends('layouts.app')
 @section('content')
+<?php
+    date_default_timezone_set('Asia/Tokyo');
+?>
 
 <div class="question_detail_container">
     <!-- 質問 -->
@@ -8,6 +11,11 @@
         <h3 class="question_title">{{ $question->title }}</h3> <!-- タイトル -->
         <div class="question_name">{{ $question->user->name }}</div> <!-- 「ユーザ名：」って文字入れる？ -->
         <div class="question_content">{{ $question->content }}</div> <!-- 内容 -->
+        <div class="chose_categorie">
+            <input type="text" value="{{old('tag1',$question->tag1)}}" style="background-color : white" readonly>
+            <input type="text" value="{{old('tag2',$question->tag2)}}" style="background-color : white" readonly>
+            <input type="text" value="{{old('tag3',$question->tag3)}}" style="background-color : white" readonly>
+        </div>
         <div class="question_time">{{ $question->created_at }}</div> <!-- 「投稿日時：」って文字入れる？表示形式わからん -->
     </div>
     <!-- 回答 -->
@@ -22,7 +30,7 @@
         @endforeach
     </div>
     <div class="btnWrapper">
-        <a class="answerBtn" href="{{ url('/answer', $question->id) }}">回答する</a>
+        <a class="btn" href="{{ url('/answer', $question->id) }}">回答する</a>
     </div>
 </div>
 @endsection

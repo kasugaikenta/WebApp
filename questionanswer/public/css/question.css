@@ -1,17 +1,19 @@
-@import url('https://fonts.googleapis.com/css2?family=Kosugi+Maru&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sawarabi+Gothic&display=swap');
 html {
   height: 100%;
 }
 body {
-  font-family: 'Kosugi Maru', sans-serif !important;
+  font-family: 'Sawarabi Gothic', sans-serif;
 }
 .py-4 {
   background-color: #fbe2b4;
-  height: 550px;
   overflow: hidden;
 }
 .navbar {
   background-color: #00c8f8 !important;
+  position: fixed;
+  width: 100%;
+  z-index: 10;
 }
 .form-group {
   width: 100%;
@@ -23,7 +25,15 @@ body {
   color: #fff;
   background-color: #59c4c5;
   opacity: 0.8;
+  font-size: 20px;
+  display: block;
+  margin: 0 auto;
+  width: 200px;
+  height: 50px;
 }
 .btn:hover {
   opacity: 1;
+}
+.padding-div {
+  padding-top: 50px;
 }

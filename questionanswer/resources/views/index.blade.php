@@ -31,7 +31,20 @@
                 </select>
             <button type="submit">検索</button>
         </form>
-            
+        
+        <form action="{{ url('searchkeywords')}}" method="POST">
+        {{csrf_field()}} 
+            <label for="listing" class="col-sm-3 control-label">キーワード検索</label>
+            <input type="text" name="search_keywords">
+            <button type="submit">検索</button>
+        </form>
+        <?php
+            if(empty($questions)){
+                echo("<p>検索結果が得られませんでした...</p>");
+                echo("<p>わからなければ聞いてみよう！</p>");
+                echo("<p>↓</p>");
+            }
+        ?>
         @foreach ($questions as $question)
             <div class="question_wrapper">
                 <!-- divタグ追加20200520 17:37 -->

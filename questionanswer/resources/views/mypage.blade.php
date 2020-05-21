@@ -16,7 +16,7 @@
         @endforeach
     </div>
     <div class="btnWrapper">
-        <a class="questionBtn" href="{{ url('/question') }}">質問する</a> <!-- ログインしてなかったらログイン画面へ -->
+        <a class="btn" href="{{ url('/question') }}">質問する</a> <!-- ログインしてなかったらログイン画面へ -->
     </div>
 </div>
 @endsection

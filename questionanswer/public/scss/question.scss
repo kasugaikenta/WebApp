@@ -17,6 +17,9 @@ body {
 
 .navbar {
     background-color: #00c8f8!important;
+    position: fixed;
+    width: 100%;
+    z-index: 10;
 }
 
 .form-group {
@@ -32,8 +35,17 @@ body {
     color: #fff;
     background-color: #59c4c5;
     opacity: 0.8;
+    font-size: 20px;
+    display: block;
+    margin: 0 auto;
+    width: 200px;
+    height: 50px;
     
     &:hover {
         opacity: 1;
     }
+}
+
+.padding-div {
+    padding-top: 50px;
 }

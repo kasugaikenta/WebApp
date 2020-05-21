@@ -44,6 +44,10 @@ h2 {
   padding-left: 30px;
   width: 70%;
 }
+.question_wrapper .question-list .chose_categorie input {
+  border: none;
+  width: 80px;
+}
 .question_wrapper a {
   margin: 10px;
   text-decoration: none;

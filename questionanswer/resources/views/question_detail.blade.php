@@ -30,7 +30,7 @@
         @endforeach
     </div>
     <div class="btnWrapper">
-        <a class="answerBtn" href="{{ url('/answer', $question->id) }}">回答する</a>
+        <a class="btn" href="{{ url('/answer', $question->id) }}">回答する</a>
     </div>
 </div>
 @endsection
